@@ -6,3 +6,8 @@ Ruta/index.html
 status: 304 Not Modified
 metodo: GET
 
+*al cambiar la ruta de la url aparece el error "404Not Found"
+
+HTML: Cumplirá el rol de la estructura, llevara a cabo todo el tema de titulos, listas y caracteristicas.
+CSS: El encargado del diseño de la pagina, como estilos de fuente, colores etc.
+JS: la logica y los calculos de la pagina, como al alquilar una bicicleta 
