@@ -2,6 +2,20 @@ h1 {
     text-align: center;
 }
 
+
+.cabecera-principal {
+    display: flex;
+    flex-direction: column;   /* Coloca el logo arriba y el texto abajo */
+    align-items: center;      /* Centra ambos elementos horizontalmente */
+    justify-content: center;  /* Asegura el centrado en su espacio */
+    text-align: center;       /* Centra las líneas de texto si son muy largas */
+    gap: 15px;                /* Controla la separación entre el logo y el título */
+}
+
+.logo-proyecto {
+    display: block;           /* Elimina espaciados invisibles por defecto de las imágenes */
+}
+
 .icono-wpp {
     display: inline-block;
     vertical-align: middle;
