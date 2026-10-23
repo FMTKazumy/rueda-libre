@@ -3,7 +3,7 @@ h1 {
 }
 
 
-.cabecera-principal {
+.logo-titulo {
     display: flex;
     flex-direction: column;   /* Coloca el logo arriba y el texto abajo */
     align-items: center;      /* Centra ambos elementos horizontalmente */
