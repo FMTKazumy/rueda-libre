@@ -126,3 +126,17 @@ Encabezado: display: flex con justify-content: space-between y align-items: cent
 Menú: la lista pasó a display: flex con flex-wrap: wrap y gap. Quité los márgenes y el inline-block de la semana 1.
 
 Pie: tres bloques (marca, contacto y horario) en fila con flex, alineados por arriba (align-items: flex-start) y separados con space-between y gap.
+
+echa: 30/10/2026
+
+Reto: Nuestra flota con Grid y Flexbox
+
+Cuadrícula: display: grid con repeat(auto-fit, minmax(14rem, 1fr)) y gap, sin media queries.
+Tarjetas: flex en columna con justify-content: space-between para dejar "Reservar" al final.
+
+Columnas observadas en modo dispositivo:
+- 1280 px: ___ columnas
+- 900 px: ___ columnas
+- 500 px: ___ columnas
+
+Séptimo modelo (Tándem): se acomodó solo, sin tocar el CSS.
