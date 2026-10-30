@@ -1,0 +1,293 @@
+/* ==========================================================
+   RUEDA LIBRE v1.0 - Hoja de estilos
+   Secciones: 1. Variables  2. Base  3. Estructura
+              4. Navegación  5. Componentes  6. Formulario
+   ========================================================== */
+
+
+/* ===== 1. VARIABLES ===== */
+:root {
+  /* Colores de marca */
+  --color-botonesyenlaces: #1E7A4F;
+  --color-destacadosybotonessecundarios: #F39A2B;
+  --color-titulosyencabezado: #14213D;
+  --color-fondogeneral: #FAF6EF;
+  --color-textosecundario: #5B6470;
+
+  /* Tipografías */
+  --fuente-titulos: "Montserrat", Arial, sans-serif;
+  --fuente-texto: "Open Sans", Arial, sans-serif;
+
+  /* Escala de espaciado */
+  --espacio-s: 0.5rem;
+  --espacio-m: 1rem;
+  --espacio-l: 2rem;
+}
+
+
+/* ===== 2. BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--color-textosecundario);
+  background-color: var(--color-fondogeneral);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--color-titulosyencabezado);
+}
+
+h1 {
+  text-align: center;
+}
+
+a {
+  color: var(--color-botonesyenlaces);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Foco visible para teclado */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-titulosyencabezado);
+  outline-offset: 0.125rem;
+}
+
+
+/* ===== 3. ESTRUCTURA (encabezado, principal, pie) ===== */
+header,
+main,
+footer {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: var(--espacio-m);
+}
+
+/* Encabezado: nombre a un extremo, menú al otro */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--espacio-m);
+}
+
+.marca {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-s);
+  color: var(--color-titulosyencabezado);
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-proyecto {
+  display: block;
+  width: 8rem;
+}
+
+/* Pie: tres bloques en fila, alineados por arriba */
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: var(--espacio-l);
+  padding-bottom: 5rem;   /* el botón fijo de WhatsApp no tapa el final */
+}
+
+.pie-bloque h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.pie-bloque p {
+  margin: 0 0 var(--espacio-s);
+}
+
+.portada {
+  min-height: 60vh;
+  padding: var(--espacio-l);
+}
+
+
+/* ===== 4. NAVEGACIÓN ===== */
+#menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-m);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#menu a {
+  color: var(--color-textosecundario);
+  text-decoration: none;
+}
+
+#menu a.activo {
+  color: var(--color-botonesyenlaces);
+  font-weight: 600;
+}
+
+#menu a:hover,
+#menu a:focus {
+  color: var(--color-titulosyencabezado);
+  text-decoration: underline;
+}
+
+
+/* ===== 5. COMPONENTES ===== */
+
+/* Botones */
+.boton-cta {
+  display: inline-block;
+  padding: var(--espacio-s) var(--espacio-l);
+  background-color: var(--color-botonesyenlaces);
+  color: var(--color-fondogeneral);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+.boton-cta:hover,
+.boton-cta:focus {
+  background-color: var(--color-destacadosybotonessecundarios);
+  color: var(--color-titulosyencabezado);
+}
+
+button.boton-cta {
+  padding: var(--espacio-m) var(--espacio-l);
+  border: none;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Botón fijo de WhatsApp (esquina inferior derecha) */
+.whatsapp-flotante {
+  position: fixed;
+  right: var(--espacio-m);
+  bottom: var(--espacio-m);
+  z-index: 10;
+}
+
+/* Icono de WhatsApp dentro del texto (index) */
+.icono-wpp {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: var(--espacio-s);
+}
+
+/* Tarjetas de servicios */
+article {
+  position: relative;   /* referencia para la etiqueta "Nuevo" */
+  width: 100%;
+  padding: var(--espacio-l);
+  border: 1px solid var(--color-textosecundario);
+  border-radius: 0.75rem;
+  margin-bottom: var(--espacio-m);
+}
+
+article img {
+  width: 100%;
+  height: auto;
+}
+
+/* Etiqueta "Nuevo" anclada a la esquina superior derecha de su tarjeta */
+.nuevo {
+  position: absolute;
+  top: var(--espacio-s);
+  right: var(--espacio-s);
+  padding: var(--espacio-s);
+  background-color: var(--color-destacadosybotonessecundarios);
+  color: var(--color-titulosyencabezado);
+  font-weight: 600;
+  border-radius: var(--espacio-s);
+}
+
+/* Tablas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-m);
+}
+
+caption {
+  padding: var(--espacio-s);
+}
+
+th,
+td {
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--color-textosecundario);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--color-titulosyencabezado);
+  color: var(--color-fondogeneral);
+}
+
+
+/* ===== 6. FORMULARIO ===== */
+fieldset {
+  padding: var(--espacio-m);
+  border: 1px solid var(--color-textosecundario);
+  border-radius: 0.5rem;
+  margin-bottom: var(--espacio-l);
+}
+
+legend {
+  padding: 0 var(--espacio-s);
+}
+
+fieldset p {
+  margin: 0 0 var(--espacio-m);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--espacio-s);
+}
+
+/* Radios y checkbox: la etiqueta va al lado */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-block;
+  margin-right: var(--espacio-m);
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: var(--espacio-s);
+  border: 1px solid var(--color-textosecundario);
+  border-radius: 0.25rem;
+  font-family: var(--fuente-texto);
+}
+
+textarea {
+  resize: vertical;
+}

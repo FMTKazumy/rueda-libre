@@ -1,0 +1,128 @@
+http://127.0.0.1:5500/index.html
+protocolo: http://
+Host:127.0.0.1
+Puerto: :5500
+Ruta/index.html
+status: 304 Not Modified
+metodo: GET
+
+*al cambiar la ruta de la url aparece el error "404Not Found"
+
+HTML: Cumplirá el rol de la estructura, llevara a cabo todo el tema de titulos, listas y caracteristicas.
+CSS: El encargado del diseño de la pagina, como estilos de fuente, colores etc.
+JS: la logica y los calculos de la pagina, como al alquilar una bicicleta 
+
+BITACORA DÍA DOS:
+
+se realizo una reestructuración del codigo para cumplir con las pliticas esteblecidas de HTML5, eliminando elementos genericos innecesarios.
+
+por ejemplo se implementaron las etiquetas <header>, <main> y <footer> para dividir por jerarquia las regiones de la pagina.
+
+con el <nav> se corrigio un error en el orden de cierre de listas.
+
+se implemntaron contenedores con el <section> inicializados con encabezados <h2>
+
+cada uno de los servicios del negocio se convirtió en un <article>.
+
+en la página de tarifas se eliminaron etiquetas <br> que no estaban permitidas en las tablas, se cerraron etiqueras huerfanas <thead>, <tbody>, scope="col" y scope="arrow" para asegurar la lectura correcta del codigo.
+
+2. Diseño y validación del formulario.
+
+Se realizan pruebas en los apartados del formulario, arroja por consiguiente resultados de:
+
+se añadió la etiqueta <form> utilizando el metodo method="POST"
+
+se dividieron los bloques usando las etiquetas <fieldset> y <legend>.
+
+se usó type="radio" para el "tipo de bicilceta" compartiendo el atributo con name="bicicleta"
+
+se implementó <select> para restringir y estandarizar las respuestas.
+
+type="date" para la fecha de reserva (AAAA-MM-DD)
+
+<textarea> se añadió para ofrecer al usuario un multilinea para especificaciones.
+
+(id/for) se vincularon a los input de los <label>. al hacer click en el texto de la etiqueta, el foco del cursor se activa automaticamente en la casilla de entrada.
+
+3. Reglas de negocio y paln de pruebas.
+
+Se implementaron validaciones de HTML5  como (required, minlength, maxlength, pattern, min, max,tittle) para cumplir las politicas extrictas del cliente.
+
+Pruebas:
+
+nombre completo: se ingresa el dato "AL"
+resultado obtenido: EL formulario no se envia; se solicita ampliar el texto.
+
+documento: 100044
+resultado obtenido: Envio detenido; muestra el mensaje aclaratorio del <tittle>
+
+
+documento: 1000abc
+resultado obtenido: Envio detenido; muestra el mensaje aclaratorio del <tittle>
+
+correo electronico: juanse2415#gmail.com
+resultado obtenido: El navegador detecta violacion del formato
+
+celular: 2233062991
+resultado obtenido: Aparece la advertencia del <tittle>
+
+cantidad: 7 
+resultado obtenido:El sistema alerta que el valor debe ser menor a 6
+
+fecha de reserva: 2026/10/15
+resultado obtenido: el calendario bloquea el día, porque esta fuera del rango permitido.
+
+comentarios: +300 comentarios 
+resultado obtenido:  El cuadro de texto detiene escritura, impide digitar mas de 300 caracteres.
+
+4. Colorimetría y contraste 
+
+color: Blanco sobre Verde Ruta
+Aptitud: Apta
+
+color: blanco sobre naranja pedal 
+Aptitud: no apta, texto ilegible
+
+color: azul noche sibre naranja pedal
+Aptitud: Apta
+
+color: azul noche sobre crema 
+Aptitud: apta 
+
+color: gris asfalto sobre crema 
+Aptitud: apta 
+
+ Fecha: 29/10/2026
+ 
+ Hoja de estilos externa con variables, tipografías y colores de marca.
+
+Propiedad que se hereda: color (y font-family)
+
+Se declara solo en body con var(--color-textosecundario).
+En Computed, el <p> muestra color:rgb(91, 100, 112) y la fuente Open Sans, sin tener una regla propia. Los hereda del body.
+
+Propiedad que no se hereda: margin (también sirve background-color)
+
+El body tiene un margen propio y el <p> no lo recibe: en Computed muestra otro valor, que viene de los estilos por defecto del navegador.
+Con background-color pasa igual: se declara en body, pero el <p> queda transparente. El crema se ve a través de él porque el fondo del body está detrás, no porque se herede.
+
+Conclusión: las propiedades de texto, como color y tipografía, pasan de padre a hijo. Las de caja, como margen, relleno y fondo, no.
+
+Cambia los valores por los que veas tú en pantalla. Si tu bitácora tiene un formato fijo (tabla, columnas, un documento aparte), pégame cómo es y te lo adapto.
+
+Fecha: 30/10/2026
+
+Box model: ancho total de la tarjeta (article) en Computed
+- content-box: ___ px (contenido + padding + borde)
+- border-box: ___ px (el width ya incluye padding y borde)
+Conclusión: con border-box el padding y el borde no suman al ancho definido, así que la tarjeta no se desborda.
+
+Fecha: 30/10/2026
+
+Reto: Un encabezado que se acomoda (Flexbox)
+
+Encabezado: display: flex con justify-content: space-between y align-items: center. El nombre queda en un extremo y el menú en el otro, centrados verticalmente.
+
+Menú: la lista pasó a display: flex con flex-wrap: wrap y gap. Quité los márgenes y el inline-block de la semana 1.
+
+Pie: tres bloques (marca, contacto y horario) en fila con flex, alineados por arriba (align-items: flex-start) y separados con space-between y gap.

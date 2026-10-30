@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rueda Libre | Reservas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="icon" type="image/png" href="../img/logo.png">
+</head>
+<body>
+
+    <header>
+        <a class="marca" href="../index.html">
+            <img class="logo-proyecto" src="../img/logo.png" alt="" width="500">
+            <span>Rueda Libre</span>
+        </a>
+        <nav>
+            <ul id="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="tarifas.html">Tarifas</a></li>
+                <li><a class="activo" href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h1>Rueda Libre | Reservas</h1>
+            <p>¡Reserva tu bicicleta y prepárate para explorar Medellín sobre dos ruedas!</p>
+
+            <form action="procesar_reserva.php" method="POST">
+
+                <!-- 1. GRUPO: Tus datos -->
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <p>
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" minlength="3" required>
+                    </p>
+                    <p>
+                        <label for="documento">Número de documento:</label>
+                        <!-- Corregido: Atributo title integrado correctamente en el input -->
+                        <input type="text" id="documento" name="documento" pattern="[0-9]{6,10}" title="El documento debe contener solo números y tener entre 6 y 10 dígitos. No se permiten letras." required>
+                    </p>
+                    <p>
+                        <label for="email">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" required>
+                    </p>
+                    <p>
+                        <label for="telefono">Teléfono celular:</label>
+                        <!-- Corregido: Expresión regular ajustada a 10 dígitos en total y atributo title integrado -->
+                        <input type="tel" id="telefono" name="telefono" pattern="3[0-9]{9}" title="El celular debe tener 10 dígitos y comenzar con el número 3 (Ej: 3001234567)." required>
+                    </p>
+                </fieldset>
+
+                <!-- 2. GRUPO: Tu alquiler -->
+                <fieldset>
+                    <legend>Tu alquiler</legend>
+                    <p>
+                        <label for="fecha">Fecha de Reserva:</label>
+                        <input type="date" id="fecha" name="fecha" min="2026-11-01" max="2026-12-31" required>
+                    </p>
+
+                    <p>
+                        <span>Tipo de Bicicleta:</span>
+                        <input type="radio" id="urbana" name="bicicleta" value="urbana" checked>
+                        <label for="urbana">Urbana</label>
+
+                        <input type="radio" id="montana" name="bicicleta" value="montaña">
+                        <label for="montana">Montaña</label>
+
+                        <input type="radio" id="electrica" name="bicicleta" value="electrica">
+                        <label for="electrica">Eléctrica</label>
+                    </p>
+
+                    <p>
+                        <label for="plan">Plan:</label>
+                        <select id="plan" name="plan" required>
+                            <option value="">Seleccione un plan</option>
+                            <option value="1hora">1 hora</option>
+                            <option value="medio_dia">Medio día</option>
+                            <option value="dia_completo">Día completo</option>
+                        </select>
+                    </p>
+
+                    <p>
+                        <label for="cantidad">Cantidad de bicicletas:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" max="6" value="1" required>
+                    </p>
+
+                    <p>
+                        <label for="recorrido">Recorrido guiado:</label>
+                        <select id="recorrido" name="recorrido" required>
+                            <option value="ninguno">Ninguno</option>
+                            <option value="rio_parques">Río y parques</option>
+                            <option value="sabores_barrio">Sabores del barrio</option>
+                            <option value="reto_palmas">Reto palmas</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+               
+                <fieldset>
+                    <legend>Confirmación</legend>
+                    <p>
+                        <label for="comentarios">Comentarios:</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" cols="45" maxlength="300" placeholder="¿Alguna especificación o requerimiento especial?"></textarea>
+                    </p>
+                    <p>
+                        <input type="checkbox" id="politicas" name="politicas" required>
+                        <label for="politicas">Acepto las políticas de alquiler de la tienda.</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <button  class="boton-cta" type="submit" name="enviar">Reservar</button>
+                </p>
+
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="pie-bloque">
+            <h2>Rueda Libre</h2>
+            <p>Alquiler de bicicletas en Medellín</p>
+            <p>&copy; 2026 Rueda Libre</p>
+        </div>
+        <div class="pie-bloque">
+            <h2>Contacto</h2>
+            <p>Correo: <a href="https://workspace.google.com/intl/es-419/gmail" target="_blank">contacto@ruedalibre.com</a></p>
+            <p>WhatsApp: +57 300 123 4567</p>
+            <p>Calle 10 #43E-15, El Poblado, Medellín</p>
+        </div>
+        <div class="pie-bloque">
+            <h2>Horario</h2>
+            <p>Sábados y domingos</p>
+            <p>7:00 a.m. a 8:00 p.m.</p>
+        </div>
+    </footer>
+    <a class="boton-cta whatsapp-flotante" href="https://wa.me/573000000000" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+</body>
+
+</html>
