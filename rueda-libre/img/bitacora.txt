@@ -1,0 +1,209 @@
+http://127.0.0.1:5500/index.html
+protocolo: http://
+Host:127.0.0.1
+Puerto: :5500
+Ruta/index.html
+status: 304 Not Modified
+metodo: GET
+
+*al cambiar la ruta de la url aparece el error "404Not Found"
+
+HTML: Cumplirá el rol de la estructura, llevara a cabo todo el tema de titulos, listas y caracteristicas.
+CSS: El encargado del diseño de la pagina, como estilos de fuente, colores etc.
+JS: la logica y los calculos de la pagina, como al alquilar una bicicleta 
+
+BITACORA DÍA DOS:
+
+se realizo una reestructuración del codigo para cumplir con las pliticas esteblecidas de HTML5, eliminando elementos genericos innecesarios.
+
+por ejemplo se implementaron las etiquetas <header>, <main> y <footer> para dividir por jerarquia las regiones de la pagina.
+
+con el <nav> se corrigio un error en el orden de cierre de listas.
+
+se implemntaron contenedores con el <section> inicializados con encabezados <h2>
+
+cada uno de los servicios del negocio se convirtió en un <article>.
+
+en la página de tarifas se eliminaron etiquetas <br> que no estaban permitidas en las tablas, se cerraron etiqueras huerfanas <thead>, <tbody>, scope="col" y scope="arrow" para asegurar la lectura correcta del codigo.
+
+2. Diseño y validación del formulario.
+
+Se realizan pruebas en los apartados del formulario, arroja por consiguiente resultados de:
+
+se añadió la etiqueta <form> utilizando el metodo method="POST"
+
+se dividieron los bloques usando las etiquetas <fieldset> y <legend>.
+
+se usó type="radio" para el "tipo de bicilceta" compartiendo el atributo con name="bicicleta"
+
+se implementó <select> para restringir y estandarizar las respuestas.
+
+type="date" para la fecha de reserva (AAAA-MM-DD)
+
+<textarea> se añadió para ofrecer al usuario un multilinea para especificaciones.
+
+(id/for) se vincularon a los input de los <label>. al hacer click en el texto de la etiqueta, el foco del cursor se activa automaticamente en la casilla de entrada.
+
+3. Reglas de negocio y paln de pruebas.
+
+Se implementaron validaciones de HTML5  como (required, minlength, maxlength, pattern, min, max,tittle) para cumplir las politicas extrictas del cliente.
+
+Pruebas:
+
+nombre completo: se ingresa el dato "AL"
+resultado obtenido: EL formulario no se envia; se solicita ampliar el texto.
+
+documento: 100044
+resultado obtenido: Envio detenido; muestra el mensaje aclaratorio del <tittle>
+
+
+documento: 1000abc
+resultado obtenido: Envio detenido; muestra el mensaje aclaratorio del <tittle>
+
+correo electronico: juanse2415#gmail.com
+resultado obtenido: El navegador detecta violacion del formato
+
+celular: 2233062991
+resultado obtenido: Aparece la advertencia del <tittle>
+
+cantidad: 7 
+resultado obtenido:El sistema alerta que el valor debe ser menor a 6
+
+fecha de reserva: 2026/10/15
+resultado obtenido: el calendario bloquea el día, porque esta fuera del rango permitido.
+
+comentarios: +300 comentarios 
+resultado obtenido:  El cuadro de texto detiene escritura, impide digitar mas de 300 caracteres.
+
+4. Colorimetría y contraste 
+
+color: Blanco sobre Verde Ruta
+Aptitud: Apta
+
+color: blanco sobre naranja pedal 
+Aptitud: no apta, texto ilegible
+
+color: azul noche sibre naranja pedal
+Aptitud: Apta
+
+color: azul noche sobre crema 
+Aptitud: apta 
+
+color: gris asfalto sobre crema 
+Aptitud: apta 
+
+ Fecha: 29/10/2026
+ 
+ Hoja de estilos externa con variables, tipografías y colores de marca.
+
+Propiedad que se hereda: color (y font-family)
+
+Se declara solo en body con var(--color-textosecundario).
+En Computed, el <p> muestra color:rgb(91, 100, 112) y la fuente Open Sans, sin tener una regla propia. Los hereda del body.
+
+Propiedad que no se hereda: margin (también sirve background-color)
+
+El body tiene un margen propio y el <p> no lo recibe: en Computed muestra otro valor, que viene de los estilos por defecto del navegador.
+Con background-color pasa igual: se declara en body, pero el <p> queda transparente. El crema se ve a través de él porque el fondo del body está detrás, no porque se herede.
+
+Conclusión: las propiedades de texto, como color y tipografía, pasan de padre a hijo. Las de caja, como margen, relleno y fondo, no.
+
+Cambia los valores por los que veas tú en pantalla. Si tu bitácora tiene un formato fijo (tabla, columnas, un documento aparte), pégame cómo es y te lo adapto.
+
+Fecha: 30/10/2026
+
+Box model: ancho total de la tarjeta (article) en Computed
+- content-box: ___ px (contenido + padding + borde)
+- border-box: ___ px (el width ya incluye padding y borde)
+Conclusión: con border-box el padding y el borde no suman al ancho definido, así que la tarjeta no se desborda.
+
+Fecha: 30/10/2026
+
+Reto: Un encabezado que se acomoda (Flexbox)
+
+Encabezado: display: flex con justify-content: space-between y align-items: center. El nombre queda en un extremo y el menú en el otro, centrados verticalmente.
+
+Menú: la lista pasó a display: flex con flex-wrap: wrap y gap. Quité los márgenes y el inline-block de la semana 1.
+
+Pie: tres bloques (marca, contacto y horario) en fila con flex, alineados por arriba (align-items: flex-start) y separados con space-between y gap.
+
+echa: 30/10/2026
+
+Reto: Nuestra flota con Grid y Flexbox
+
+Cuadrícula: display: grid con repeat(auto-fit, minmax(14rem, 1fr)) y gap, sin media queries.
+Tarjetas: flex en columna con justify-content: space-between para dejar "Reservar" al final.
+
+Columnas observadas en modo dispositivo:
+- 1280 px: 4 columnas
+- 900 px: 3 columnas
+- 500 px: 1 columna
+
+Séptimo modelo (Tándem): se acomodó solo, sin tocar el CSS.
+
+Fecha: 03/11/2026
+
+Reto: Layout en dos dimensiones (Grid y Flexbox)
+
+Criterio: uso Flexbox cuando acomodo elementos en una sola dimensión (una fila o una columna) y Grid cuando defino columnas y filas del contenedor.
+
+- Portada: Grid. Las dos columnas (1fr 1fr) las define el contenedor y el texto se centra en vertical con align-items.
+- Galería de rutas: Grid. Tres columnas iguales con repeat(3, 1fr) y gap; si hay más rutas se crean nuevas filas.
+- Reservas (formulario y contacto): Grid. Necesito la proporción 2:1 entre columnas con 2fr y 1fr.
+- Fila del formulario (documento y celular): Flexbox. Es una sola fila con dos campos que se reparten el espacio con flex: 1.
+- Encabezado: Flexbox. Es una sola fila con el nombre a un extremo y el menú al otro.
+- Pie: Flexbox. Son tres bloques en una sola fila que pueden bajar de línea.
+
+Fecha: 03/11/2026
+
+Reto: Responsive con enfoque mobile-first
+
+Los estilos sin media query describen la versión móvil (una columna). Agregué dos puntos de quiebre con min-width: 768px (tablet) y 1200px (escritorio).
+
+Comportamiento por ancho:
+- Encabezado: en 360 px el nombre queda arriba y el menú debajo, centrado. Desde 768 px vuelve a una fila con el nombre a un extremo y el menú al otro.
+- Pie: en 360 px los tres bloques van apilados. Desde 768 px pasan a una fila.
+- Portada: una columna en móvil; desde 768 px, texto a la izquierda y foto a la derecha.
+- Galería de rutas: una columna en móvil; desde 768 px, tres tarjetas en una fila.
+- Reservas: formulario y contacto apilados; desde 1200 px, proporción 2fr 1fr.
+- Flota (auto-fit con minmax(14rem, 1fr), sin media queries): 4 columnas a 1280 px, 3 a 900 px y 1 a 500 px.
+
+Problemas que encontré y cómo los resolví:
+1. Las tablas de tarifas se salían de la pantalla a 360 px y obligaban a desplazar de lado. Solución: en móvil tienen letra de 0.8125rem y relleno de 0.25rem horizontal; desde 768 px vuelven a 1rem y al relleno normal.
+2. El documento y el celular en una misma fila quedaban muy apretados en móvil. Solución: .fila-campos es una columna en móvil y pasa a fila desde 768 px.
+3. El contacto de reservas en 1/3 era demasiado angosto en tablet para el correo. Solución: el formulario y el contacto van apilados hasta 1200 px, donde se aplica 2fr 1fr.
+4. En la portada había un <div> sin cerrar, y la imagen quedaba dentro de otro <div> en lugar de ser la segunda columna del grid. Solución: cerré portada-texto y dejé la imagen como hija directa de la sección.
+5. El archivo montaña-trail.png tenía la ñ en el nombre, que puede dar 404 en GitHub Pages. Solución: lo renombré a montana-trail.png.
+
+Imágenes: ninguna se sale de su contenedor (img con max-width: 100% y height: auto).
+
+Fecha: 03/11/2026
+
+Reto: La flota en Bootstrap, primera comparación
+
+Página de pruebas: pruebas/catalogo-bootstrap.html (Bootstrap 5.3.8 por CDN, sin styles.css y sin CSS propio).
+
+Tiempo invertido:
+- Versión propia (Grid con auto-fit): ___ minutos
+- Versión Bootstrap: ___ minutos
+
+Código de distribución de la flota:
+- Versión propia: 1 regla .cuadricula con 3 declaraciones (5 líneas de CSS) y 1 clase en el HTML. Si cuento también la regla que alinea "Reservar" al final de cada tarjeta, son 11 líneas.
+- Versión Bootstrap: 0 líneas de CSS propio y 38 clases en el HTML: container, row, g-4, col-12 col-sm-6 col-lg-4 col-xl-3 en cada una de las 7 columnas, e img-fluid en cada imagen.
+
+Columnas observadas en modo dispositivo:
+- Menos de 576 px: 1 columna
+- 576 px (sm): 2 columnas
+- 992 px (lg): 3 columnas
+- 1200 px (xl): 4 columnas
+
+Qué me dio Bootstrap sin esfuerzo: el contenedor centrado con ancho máximo, los cuatro puntos de quiebre ya definidos, los gutters con una sola clase (g-4) y el box-sizing aplicado por defecto.
+
+Qué control perdí:
+- Mi cuadrícula se adapta de forma continua al ancho (auto-fit con minmax) y Bootstrap solo cambia en sus cuatro puntos de quiebre.
+- Cada columna necesita sus cuatro clases repetidas siete veces en el HTML.
+- Las imágenes no son fluidas por defecto: tuve que agregar img-fluid.
+- El espacio de g-4 no sale de mi escala de variables (--espacio-*).
+- La alineación del botón "Reservar" al final de la tarjeta y las alturas iguales no vienen en la grilla.
+- Hay que cargar una hoja de estilos y un script externos (revisar su peso en Network).
+
