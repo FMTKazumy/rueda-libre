@@ -285,3 +285,20 @@ Desventajas observadas:
 
 Conclusión: ___
 
+Fecha: 4 de noviembre de 2026
+• El botón con Bootstrap (Semana 2): Se construyó usando un componente predefinido de alto nivel mediante clases como class="btn btn-primary". El diseño (colores, espaciados y bordes) ya venía empaquetado de fábrica, requiriendo solo invocar la clase para que funcionara de forma estandarizada.
+• El botón con Tailwind CSS (Hoy): No se usaron componentes hechos. El diseño se armó combinando múltiples utilidades de un solo propósito directamente en el HTML: class="inline-block bg-emerald-500 text-slate-950 font-bold py-3 px-6 rounded-xl". Cada clase controló una propiedad CSS exacta (un color, un padding, un borde).
+
+Diferencia clave entre ambos enfoques:
+
+• Bootstrap (Componentes): Ofrece bloques visuales listos para usar. Es muy rápido para estructurar, pero limita la originalidad, haciendo que los sitios web se vean idénticos y requieran sobrescribir código para personalizarse.
+• Tailwind CSS (Utility-First): No impone ningún diseño pre-construido. Ofrece herramientas de bajo nivel directamente en el marcado HTML, lo que da una libertad creativa total para crear interfaces personalizadas y únicas sin necesidad de escribir hojas de estilo CSS externas.
+
+Fecha: 4 de noviembre de 2026 [4]
+• El flujo con Play CDN (Prototipo): Funciona mediante una etiqueta <script> que obliga al navegador a descargar toda la librería e interpretar el HTML en tiempo real cada vez que se carga la página [Tailwind]. Es una herramienta excelente para hacer pruebas rápidas o aprender, pero ralentiza la carga del sitio web.
+• El flujo con la CLI de Tailwind (Producción): Funciona de forma local mediante una terminal activa (--watch) que actúa como una fábrica de estilos [Tailwind CSS]. La consola lee las clases que escribimos en el HTML, extrae el código CSS real de esas clases y genera un archivo final empaquetado y limpio llamado output.css.
+
+Diferencia clave entre ambos enfoques:
+
+• Rendimiento y velocidad: Con la CLI, el navegador del usuario final solo procesa un archivo CSS puro de apenas unos cuantos kilobytes que contiene exclusivamente las clases utilizadas. No hay demoras ni procesamiento extra en el navegador, logrando que el sitio de Rueda Libre cargue de forma ultrarrápida.
+• Optimización para producción: El Play CDN está prohibido para proyectos reales debido a que no está optimizado y no soporta plugins. La CLI ofrece un entorno robusto, elimina automáticamente todo el código CSS que no se usó (purga) y deja el proyecto listo para subirse de forma profesional a cualquier servidor de internet.
