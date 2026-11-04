@@ -1,0 +1,325 @@
+/* ==========================================================
+   RUEDA LIBRE v2.0-beta - Hoja de estilos
+   Se carga DESPUÉS de Bootstrap en las tres páginas.
+   Bootstrap resuelve la distribución (grilla, flex, posición
+   y visibilidad); aquí solo queda la identidad visual:
+   variables, tipografía, colores, tarjetas, tablas y estados.
+   Secciones: 1. Variables  2. Puente con Bootstrap  3. Base
+              4. Identidad de página  5. Navegación
+              6. Componentes  7. Formulario  8. Tablet
+   ========================================================== */
+
+
+/* ===== 1. VARIABLES ===== */
+:root {
+  /* Colores de marca */
+  --color-botonesyenlaces: #1E7A4F;
+  --color-destacadosybotonessecundarios: #F39A2B;
+  --color-titulosyencabezado: #14213D;
+  --color-fondogeneral: #FAF6EF;
+  --color-textosecundario: #5B6470;
+
+  /* Tipografías */
+  --fuente-titulos: "Montserrat", Arial, sans-serif;
+  --fuente-texto: "Open Sans", Arial, sans-serif;
+
+  /* Escala de espaciado */
+  --espacio-s: 0.5rem;
+  --espacio-m: 1rem;
+  --espacio-l: 2rem;
+}
+
+
+/* ===== 2. PUENTE CON BOOTSTRAP =====
+   Las utilidades de color de Bootstrap (text-bg-*, text-secondary...) leen
+   variables --bs-*. Al redefinirlas aquí (styles.css se carga después y usa
+   el mismo selector :root) usan la paleta de marca, sin !important. */
+:root {
+  --bs-success-rgb: 30, 122, 79;             /* #1E7A4F */
+  --bs-warning-rgb: 243, 154, 43;            /* #F39A2B naranja destacado */
+  --bs-secondary-rgb: 91, 100, 112;          /* #5B6470 texto secundario */
+  --bs-primary-text-emphasis: var(--color-titulosyencabezado);
+}
+
+
+/* ===== 3. BASE ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fuente-texto);
+  color: var(--color-textosecundario);
+  background-color: var(--color-fondogeneral);
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--color-titulosyencabezado);
+}
+
+/* El Reboot de Bootstrap cambia tamaños y márgenes de títulos y párrafos.
+   Se restauran los de la identidad de Rueda Libre. */
+h1 { font-size: 2rem;    margin: 0.67em 0; }
+h2 { font-size: 1.5rem;  margin: 0.83em 0; }
+h3 { font-size: 1.17rem; margin: 1em 0; }
+
+h1 {
+  text-align: center;
+}
+
+p {
+  margin: 1em 0;
+}
+
+a {
+  color: var(--color-botonesyenlaces);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Foco visible para teclado */
+a:focus,
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 3px solid var(--color-titulosyencabezado);
+  outline-offset: 0.125rem;
+}
+
+
+/* ===== 4. IDENTIDAD DE PÁGINA ===== */
+
+/* Ancho de lectura: 70rem como máximo y centrado (Bootstrap llegaría a 1320px) */
+header,
+main,
+footer {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: var(--espacio-m);
+}
+
+/* Espacio extra para que el botón fijo de WhatsApp no tape el final */
+footer {
+  padding-bottom: 5rem;
+}
+
+/* Nombre del negocio */
+.marca {
+  color: var(--color-titulosyencabezado);
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.logo-proyecto {
+  width: 8rem;
+}
+
+.portada {
+  min-height: 60vh;
+}
+
+.pie-bloque h2 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.pie-bloque p {
+  margin: 0 0 var(--espacio-s);
+}
+
+.pie-bloque a,
+.contacto a {
+  overflow-wrap: anywhere;
+}
+
+
+/* ===== 5. NAVEGACIÓN ===== */
+#menu a {
+  color: var(--color-textosecundario);
+  text-decoration: none;
+}
+
+#menu a.activo {
+  color: var(--color-botonesyenlaces);
+  font-weight: 600;
+}
+
+#menu a:hover,
+#menu a:focus {
+  color: var(--color-titulosyencabezado);
+  text-decoration: underline;
+}
+
+
+/* ===== 6. COMPONENTES ===== */
+
+/* Botones */
+.boton-cta {
+  display: inline-block;
+  padding: var(--espacio-s) var(--espacio-l);
+  background-color: var(--color-botonesyenlaces);
+  color: var(--color-fondogeneral);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0.25rem;
+}
+
+.boton-cta:hover,
+.boton-cta:focus {
+  background-color: var(--color-destacadosybotonessecundarios);
+  color: var(--color-titulosyencabezado);
+}
+
+button.boton-cta {
+  padding: var(--espacio-m) var(--espacio-l);
+  border: none;
+  font-family: var(--fuente-texto);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Tarjetas */
+article,
+.contacto {
+  padding: var(--espacio-l);
+  border: 1px solid var(--color-textosecundario);
+  border-radius: 0.75rem;
+}
+
+article {
+  position: relative;   /* referencia para la etiqueta "Nuevo" */
+  width: 100%;
+  margin-bottom: var(--espacio-m);
+}
+
+article img {
+  width: 100%;
+  height: auto;
+}
+
+/* Etiqueta "Nuevo" anclada a la esquina superior derecha de su tarjeta */
+.nuevo {
+  position: absolute;
+  top: var(--espacio-s);
+  right: var(--espacio-s);
+  padding: var(--espacio-s);
+  background-color: var(--color-destacadosybotonessecundarios);
+  color: var(--color-titulosyencabezado);
+  font-weight: 600;
+  border-radius: var(--espacio-s);
+}
+
+.precio {
+  font-weight: 600;
+  color: var(--color-titulosyencabezado);
+}
+
+/* Tablas: compactas en móvil para leerse sin desplazamiento lateral */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-m);
+  font-size: 0.8125rem;
+}
+
+/* Bootstrap manda el título de la tabla abajo, a la izquierda y en gris */
+caption {
+  caption-side: top;
+  padding: var(--espacio-s);
+  color: inherit;
+  text-align: center;
+}
+
+th,
+td {
+  padding: var(--espacio-s) 0.25rem;
+  border: 1px solid var(--color-textosecundario);
+  text-align: left;
+}
+
+thead th {
+  background-color: var(--color-titulosyencabezado);
+  color: var(--color-fondogeneral);
+}
+
+
+/* ===== 7. FORMULARIO ===== */
+fieldset {
+  min-width: 0;
+  padding: var(--espacio-m);
+  border: 1px solid var(--color-textosecundario);
+  border-radius: 0.5rem;
+  margin-bottom: var(--espacio-l);
+}
+
+/* Bootstrap hace flotar la leyenda a todo el ancho; vuelve a ser una
+   etiqueta sobre el borde del fieldset */
+legend {
+  float: none;
+  width: auto;
+  margin-bottom: 0;
+  padding: 0 var(--espacio-s);
+  font-size: 1rem;
+}
+
+fieldset p {
+  margin: 0 0 var(--espacio-m);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--espacio-s);
+}
+
+/* Radios y checkbox: la etiqueta va al lado */
+input[type="radio"] + label,
+input[type="checkbox"] + label {
+  display: inline-block;
+  margin-right: var(--espacio-m);
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: var(--espacio-s);
+  border: 1px solid var(--color-textosecundario);
+  border-radius: 0.25rem;
+  font-family: var(--fuente-texto);
+}
+
+textarea {
+  resize: vertical;
+}
+
+
+/* ===== 8. TABLET (768px en adelante) ===== */
+@media (min-width: 768px) {
+
+  /* Tablas con espacio y letra normales */
+  table {
+    font-size: 1rem;
+  }
+
+  th,
+  td {
+    padding: var(--espacio-s) var(--espacio-m);
+  }
+}
