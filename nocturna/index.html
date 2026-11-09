@@ -190,7 +190,7 @@
             </div>
         </section>
 
-        <section id="inscripcion" class="scroll-mt-20 py-20 bg-slate-800/30">
+               <section id="inscripcion" class="scroll-mt-20 py-20 bg-slate-800/30">
             <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-4">
                     <h2 class="text-3xl md:text-4xl font-black tracking-tight">¿Listo para unirte a la rodada nocturna?</h2>
@@ -210,12 +210,20 @@
                         </select>
                     </div>
                     <div class="flex flex-col space-y-2">
-                        <label for="correo" class="text-sm font-semibold text-slate-200">Correo Electrónico</label>
-                        <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="ejemplo@correo.com" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20">
+                        <label for="correo" class="text-sm font-semibold tracking-wide text-slate-200">
+                            Correo Electrónico
+                        </label>
+                        <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="ejemplo@correo.com" 
+                               class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-all duration-200 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20">
+                        <p class="text-xs text-slate-400">Te enviaremos los detalles de la ruta y el mapa GPX aquí.</p>
                     </div>
                     <div class="flex flex-col space-y-2">
-                        <label for="celular" class="text-sm font-semibold text-slate-200">Número de Celular</label>
-                        <input type="tel" id="celular" name="celular" required autocomplete="tel" placeholder="300 123 4567" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20">
+                        <label for="celular" class="text-sm font-semibold tracking-wide text-slate-200">
+                            Número de Celular
+                        </label>
+                        <input type="tel" id="celular" name="celular" required autocomplete="tel" placeholder="300 123 4567" 
+                               class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white placeholder:text-slate-500 transition-all duration-200 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-500/20">
+                        <p class="text-xs text-slate-400">Esencial para coordinar el grupo por WhatsApp en caso de retraso.</p>
                     </div>
                     <button type="submit" class="block text-center bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold py-3 px-6 rounded-xl tracking-wide uppercase text-sm transition-colors duration-300 w-full mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-300">Finalizar Registro</button>
                 </form>
@@ -244,7 +252,7 @@
 
             <div class="space-y-2 md:w-1/3 md:text-right flex flex-col">
                 <div class="font-semibold text-white text-xs uppercase tracking-widest">Contacto</div>
-                <!-- Reemplaza con tus datos reales -->
+             
                 <p class="text-xs text-slate-400">contacto@ruedalibre.com</p>
                 <p class="text-xs text-slate-400">+57 3223062991</p>
                 <p class="text-xs text-slate-400">© 2026 Rueda Libre Nocturna. Todos los derechos reservados.</p>
