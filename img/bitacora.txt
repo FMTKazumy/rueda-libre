@@ -302,3 +302,20 @@ Diferencia clave entre ambos enfoques:
 
 • Rendimiento y velocidad: Con la CLI, el navegador del usuario final solo procesa un archivo CSS puro de apenas unos cuantos kilobytes que contiene exclusivamente las clases utilizadas. No hay demoras ni procesamiento extra en el navegador, logrando que el sitio de Rueda Libre cargue de forma ultrarrápida.
 • Optimización para producción: El Play CDN está prohibido para proyectos reales debido a que no está optimizado y no soporta plugins. La CLI ofrece un entorno robusto, elimina automáticamente todo el código CSS que no se usó (purga) y deja el proyecto listo para subirse de forma profesional a cualquier servidor de internet.
+
+09/11/2026
+Para distribuir los cuatro pasos de la sección ¿Cómo funciona? elegí CSS Grid (grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6) en lugar de Flexbox por tres razones principales:
+1. Ancho de columnas estrictamente idéntico: Con md:grid-cols-4, el navegador divide el espacio disponible en cuatro pistas exactamente iguales (1fr cada una), sin importar si un paso tiene más texto que otro. En Flexbox, elementos con distinta cantidad de contenido pueden variar de ancho si no se fuerzan bases o proporciones manuales.
+2. Alineación bidimensional y responsiva sencilla: Grid permite pasar de 1 columna en móvil (grid-cols-1), a 2 columnas en tablet (sm:grid-cols-2) y a 4 columnas en escritorio (md:grid-cols-4) usando solo clases de columnas, manteniendo filas y márgenes (gap-6) perfectamente alineados en ambos ejes.
+3. Consistencia con la cuadrícula de rutas: Al igual que la sección "Nuestras Rutas Nocturnas" (md:grid-cols-3), usar Grid para colecciones de tarjetas repetitivas mantiene un código más limpio, predecible y fácil de escalar.
+
+ Diagnóstico inicial a 360 px (antes de los ajustes)
+• El encabezado mostraba un menú desplegable (<details>) en lugar de apilar el logo y dejar visible directamente el botón "Inscribirse" como requiere el diseño móvil.
+• Las tarjetas de rutas saltaban directamente de 1 columna a 3 columnas en 768 px (md:), dejando las tarjetas demasiado estrechas en tablet (768 px) al no tener un paso intermedio de 2 columnas.
+• El título principal (text-4xl) y el relleno vertical (py-20) ocupaban demasiado alto de pantalla en móviles de 360 px.
+
+Ancho de pantalla	Encabezado	Sección Rutas	Sección Pasos	Scroll horizontal y legibilidad
+360 px (Móvil)	Apilado (flex-col): logo arriba, enlaces ocultos (hidden) y botón "Inscribirse" visible abajo.	1 columna (grid-cols-1).	1 columna (grid-cols-1).	Sin scroll horizontal; textos y botones legibles a ancho completo.
+768 px (Tablet)	En fila (md:flex-row): logo a la izquierda, enlaces y botón a la derecha.	2 columnas (sm:grid-cols-2).	2 columnas (sm:grid-cols-2).	Sin scroll horizontal; distribución equilibrada sin apretar tarjetas.
+1024 px (Laptop)	En fila (md:flex-row) con mayor separación entre enlaces (lg:gap-8).	3 columnas (lg:grid-cols-3).	4 columnas (md:grid-cols-4).	Sin scroll horizontal; título principal crece a lg:text-6xl.
+1280 px (Escritorio)	En fila dentro del contenedor centrado max-w-6xl.	3 columnas con lg:gap-8.	4 columnas con gap-6.	Sin scroll horizontal; márgenes laterales amplios y jerarquía clara.
