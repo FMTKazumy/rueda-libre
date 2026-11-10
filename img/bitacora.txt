@@ -319,3 +319,37 @@ Ancho de pantalla	Encabezado	Sección Rutas	Sección Pasos	Scroll horizontal y l
 768 px (Tablet)	En fila (md:flex-row): logo a la izquierda, enlaces y botón a la derecha.	2 columnas (sm:grid-cols-2).	2 columnas (sm:grid-cols-2).	Sin scroll horizontal; distribución equilibrada sin apretar tarjetas.
 1024 px (Laptop)	En fila (md:flex-row) con mayor separación entre enlaces (lg:gap-8).	3 columnas (lg:grid-cols-3).	4 columnas (md:grid-cols-4).	Sin scroll horizontal; título principal crece a lg:text-6xl.
 1280 px (Escritorio)	En fila dentro del contenedor centrado max-w-6xl.	3 columnas con lg:gap-8.	4 columnas con gap-6.	Sin scroll horizontal; márgenes laterales amplios y jerarquía clara.
+
+Fecha: 9 de noviembre de 2026
+Reto: Refactorización con @layer components, @apply y comparativa Bootstrap vs Tailwind
+
+1. Clases repetidas en la landing
+• Botón principal "Inscribirse": 6 veces, con entre 13 y 23 clases cada vez.
+• Campos de formulario (2 inputs y 1 select): 3 veces, con 22 clases cada uno.
+• Etiquetas de nivel: 3 veces, con 6 clases cada una.
+• Cards de ruta: 3 veces, con 17 clases cada una (las dejé con su marcado, como en el kit).
+• Enlaces del menú: 4 veces en escritorio y 4 en móvil.
+
+2. Refactorización
+Creé tres clases con @apply dentro de @layer components en css/input.css: .btn-primario, .etiqueta y .campo. Cada botón conserva en el HTML solo su tamaño y posición. Ordené las clases de cada elemento en este orden: layout, espaciado, tipografía, color y estados. El HTML pasó de 899 a 743 clases y la página se ve igual que antes en modo claro y oscuro.
+
+3. Mediciones (DevTools, pestaña Network)
+• CSS de Tailwind con --minify (output.css): ___ KB
+• CSS de Bootstrap 5.3.8 (bootstrap.min.css): ___ KB
+• JavaScript de Bootstrap (bootstrap.bundle.min.js): ___ KB
+• Total que descarga el sitio con Bootstrap: ___ KB, contra ___ KB con Tailwind.
+
+4. Comparativa Bootstrap vs Tailwind
+• Curva de aprendizaje: Con Bootstrap aprendí rápido porque bastó con memorizar componentes (btn, card, table, col-lg-8) y copiar su estructura. Con Tailwind tardé más al principio, porque hay que conocer muchas utilidades y escribir cada decisión de diseño, pero luego avancé más rápido porque ya no cambiaba de archivo para escribir CSS.
+• Personalización: En Bootstrap tuve que sobrescribir estilos en styles.css para que el sitio se viera con mi identidad. En Tailwind definí mis seis colores y mis dos fuentes en @theme y se convirtieron en utilidades propias (bg-azul-noche, font-titulos), además del modo oscuro con la variante dark:.
+• Tamaño final: ___ (comparar mis mediciones del punto 3 y decir cuál pesa menos y por qué: Tailwind solo genera las clases que uso, Bootstrap trae todos sus componentes).
+• Casos de uso: Bootstrap me sirvió para tarifas y reservas (tablas, grilla y formularios estándar), donde importa la rapidez. Tailwind me sirvió para la landing nocturna, donde necesitaba un diseño propio y un modo oscuro espectacular.
+
+5. Recomendación para Rueda Libre
+Recomiendo Tailwind para la próxima versión de todo el sitio. Rueda Libre tiene una identidad propia (paleta, tipografías y modo oscuro) y con Tailwind esa identidad vive en un solo lugar, @theme, en vez de en reglas que sobrescriben a Bootstrap. Para evitar el HTML largo, repito con @apply solo las piezas pequeñas y repetidas (botón, etiqueta, campo), y mantengo las cards como marcado reutilizable. Además, mi CSS final pesa ___ KB contra ___ KB de Bootstrap (CSS y JavaScript juntos).
+
+6. Validación de contraste en modo oscuro (mínimo 4.5:1)
+• Crema sobre Azul Noche: 14.83:1, cumple.
+• Amarillo Farol sobre Azul Noche: 11.08:1, cumple.
+• Naranja sobre Azul Noche: 7.2:1, cumple.
+• Verde Ruta sobre Azul Noche: 3.01:1, no cumple. Lo corregí usando Amarillo Farol para textos y enlaces en oscuro, y dejando el verde solo como fondo con texto crema (4.93:1).
