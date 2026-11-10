@@ -12,26 +12,28 @@
 
     <header class="w-full sticky top-0 z-50 border-b border-azul-noche/10 bg-crema/90 backdrop-blur dark:border-white/10 dark:bg-azul-noche/90">
         <div class="max-w-6xl h-20 flex items-center justify-between mx-auto px-6">
-            <a href="#inicio" class="text-xl font-titulos font-bold tracking-wider uppercase text-verde-ruta rounded dark:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Rueda Libre</a>
+            <a href="../index.html" aria-label="Rueda Libre: ir al sitio principal" class="text-xl font-titulos font-bold tracking-wider uppercase text-verde-ruta rounded dark:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Rueda Libre</a>
 
-            <nav aria-label="Principal" class="hidden items-center md:flex gap-8">
+            <nav aria-label="Principal" class="hidden items-center lg:flex gap-8">
                 <a href="#inicio" class="text-sm font-semibold text-azul-noche rounded transition-colors dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Inicio</a>
                 <a href="#rutas" class="text-sm font-semibold text-azul-noche rounded transition-colors dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Rutas</a>
                 <a href="#como-funciona" class="text-sm font-semibold text-azul-noche rounded transition-colors dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">¿Cómo funciona?</a>
                 <a href="#inscripcion" class="text-sm font-semibold text-azul-noche rounded transition-colors dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Inscripción</a>
+                <a href="../paginas/reservas.html" class="inline-block border-2 border-verde-ruta px-5 py-2 text-xs font-semibold uppercase tracking-wide rounded-xl text-verde-ruta transition-colors duration-300 hover:bg-verde-ruta hover:text-crema dark:border-amarillo-farol dark:text-amarillo-farol dark:hover:bg-amarillo-farol dark:hover:text-azul-noche focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-verde-ruta dark:focus-visible:ring-amarillo-farol">Reserva tu bici</a>
                 <a href="#inscripcion" class="btn-primario inline-block py-2.5 px-5 text-xs">Inscribirse</a>
             </nav>
 
         </div>
 
         <!-- Menú móvil: details/summary abre y cierra sin JavaScript -->
-        <details class="md:hidden border-t border-azul-noche/10 bg-crema dark:border-white/10 dark:bg-azul-noche">
+        <details class="lg:hidden border-t border-azul-noche/10 bg-crema dark:border-white/10 dark:bg-azul-noche">
             <summary class="list-none [&::-webkit-details-marker]:hidden cursor-pointer px-6 py-3 text-sm font-semibold uppercase tracking-wider text-azul-noche dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol">Menú ☰</summary>
             <nav aria-label="Principal móvil" class="flex flex-col px-6 pb-4 gap-4">
                 <a href="#inicio" class="text-sm font-semibold text-azul-noche dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol">Inicio</a>
                 <a href="#rutas" class="text-sm font-semibold text-azul-noche dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol">Rutas</a>
                 <a href="#como-funciona" class="text-sm font-semibold text-azul-noche dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol">¿Cómo funciona?</a>
                 <a href="#inscripcion" class="text-sm font-semibold text-azul-noche dark:text-crema hover:text-verde-ruta dark:hover:text-amarillo-farol">Inscripción</a>
+                <a href="../paginas/reservas.html" class="block text-center border-2 border-verde-ruta px-5 py-2 text-xs font-semibold uppercase rounded-xl text-verde-ruta dark:border-amarillo-farol dark:text-amarillo-farol">Reserva tu bici</a>
                 <a href="#inscripcion" class="btn-primario block py-2.5 px-5 text-center text-xs">Inscribirse</a>
             </nav>
         </details>
@@ -158,6 +160,66 @@
             </div>
         </section>
 
+        <section id="planes" class="scroll-mt-20 py-20 border-b border-azul-noche/10 dark:border-white/10">
+            <div class="max-w-6xl mx-auto px-6 space-y-12">
+
+                <div class="space-y-2 text-center">
+                    <h2 class="text-3xl font-titulos font-bold tracking-tight">Planes Rueda Nocturna</h2>
+                    <p class="max-w-md mx-auto text-sm text-gris-ruta dark:text-crema/75">Elige el plan que mejor se ajuste a tu salida.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+                    <article class="relative flex flex-col p-6 rounded-2xl border-4 border-transparent bg-white shadow-md ring-1 ring-azul-noche/10 dark:bg-white/5 dark:ring-white/10">
+                        <h3 class="text-xl font-titulos font-bold tracking-tight text-azul-noche dark:text-crema">Individual</h3>
+                        <p class="flex flex-wrap items-baseline gap-x-2 mt-4">
+                            <span class="text-3xl font-titulos font-bold text-verde-ruta dark:text-amarillo-farol">$55.000</span>
+                            <span class="text-sm text-gris-ruta dark:text-crema/75">por persona</span>
+                        </p>
+                        <ul class="flex flex-col gap-3 my-6 py-6 border-y border-azul-noche/10 dark:border-white/10">
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Bicicleta y casco</span></li>
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Luces LED y chaleco</span></li>
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Guía certificado</span></li>
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Hidratación</span></li>
+                        </ul>
+                        <a href="#inscripcion" class="btn-primario mt-auto block w-full py-3 px-6 text-center text-sm">Elegir Individual</a>
+                    </article>
+
+                    <article class="relative flex flex-col p-6 rounded-2xl border-4 border-amarillo-farol bg-azul-noche text-crema shadow-2xl dark:bg-white/10">
+                        <span class="etiqueta absolute -top-4 left-6 uppercase tracking-wide bg-amarillo-farol text-azul-noche">Más elegido</span>
+                        <h3 class="text-xl font-titulos font-bold tracking-tight text-crema">Pareja</h3>
+                        <p class="flex flex-wrap items-baseline gap-x-2 mt-4">
+                            <span class="text-3xl font-titulos font-bold text-amarillo-farol">$99.000</span>
+                            <span class="text-sm text-crema/90">las dos personas</span>
+                        </p>
+                        <ul class="flex flex-col gap-3 my-6 py-6 border-y border-white/20">
+                            <li class="flex items-start gap-2 text-sm text-crema"><span class="font-bold text-amarillo-farol" aria-hidden="true">✓</span><span>Todo lo del plan Individual</span></li>
+                            <li class="flex items-start gap-2 text-sm text-crema"><span class="font-bold text-amarillo-farol" aria-hidden="true">✓</span><span>Foto del recorrido</span></li>
+                            <li class="flex items-start gap-2 text-sm text-crema"><span class="font-bold text-amarillo-farol" aria-hidden="true">✓</span><span>Snack para dos</span></li>
+                            <li class="flex items-start gap-2 text-sm text-crema"><span class="font-bold text-amarillo-farol" aria-hidden="true">✓</span><span>Prioridad en la ruta</span></li>
+                        </ul>
+                        <a href="#inscripcion" class="btn-primario mt-auto block w-full py-3 px-6 text-center text-sm bg-amarillo-farol text-azul-noche hover:bg-crema">Elegir Pareja</a>
+                    </article>
+
+                    <article class="relative flex flex-col p-6 rounded-2xl border-4 border-transparent bg-white shadow-md ring-1 ring-azul-noche/10 dark:bg-white/5 dark:ring-white/10">
+                        <h3 class="text-xl font-titulos font-bold tracking-tight text-azul-noche dark:text-crema">Grupo (4 a 8)</h3>
+                        <p class="flex flex-wrap items-baseline gap-x-2 mt-4">
+                            <span class="text-3xl font-titulos font-bold text-verde-ruta dark:text-amarillo-farol">$45.000</span>
+                            <span class="text-sm text-gris-ruta dark:text-crema/75">por persona</span>
+                        </p>
+                        <ul class="flex flex-col gap-3 my-6 py-6 border-y border-azul-noche/10 dark:border-white/10">
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Todo lo del plan Individual</span></li>
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Guía exclusivo</span></li>
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Horario a elección</span></li>
+                            <li class="flex items-start gap-2 text-sm text-azul-noche dark:text-crema"><span class="font-bold text-verde-ruta dark:text-amarillo-farol" aria-hidden="true">✓</span><span>Fotos del grupo</span></li>
+                        </ul>
+                        <a href="#inscripcion" class="btn-primario mt-auto block w-full py-3 px-6 text-center text-sm">Elegir Grupo</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
         <section id="como-funciona" class="scroll-mt-20 py-20 border-b border-azul-noche/10 dark:border-white/10">
             <div class="max-w-6xl mx-auto px-6 space-y-12">
                 <div class="space-y-2 text-center">
@@ -191,41 +253,90 @@
         </section>
 
                <section id="inscripcion" class="scroll-mt-20 py-20 bg-white/50 dark:bg-white/[0.03]">
-            <div class="max-w-6xl grid grid-cols-1 items-center md:grid-cols-2 mx-auto px-6 gap-12">
-                <div class="space-y-4">
-                    <h2 class="text-3xl font-titulos font-bold tracking-tight md:text-4xl">¿Listo para unirte a la rodada nocturna?</h2>
+            <div class="max-w-3xl mx-auto px-6 space-y-10">
+                <div class="space-y-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-titulos font-bold tracking-tight">¿Listo para unirte a la rodada nocturna?</h2>
                     <p class="text-sm md:text-base text-gris-ruta dark:text-crema/75">
-                        Elige tu ruta y completa tus datos de contacto. Tras finalizar el registro, te enviaremos por correo el archivo GPX con la ruta de navegación para tu celular o ciclocomputador.
+                        Elige tu ruta y completa tus datos. Tras finalizar el registro, te enviaremos por correo el archivo GPX con la ruta de navegación para tu celular o ciclocomputador. Todos los campos son obligatorios.
                     </p>
                 </div>
 
-                <form class="w-full space-y-4 p-6 bg-white rounded-2xl border border-azul-noche/10 dark:bg-white/5 dark:border-white/10">
-                    <div class="flex flex-col space-y-2">
-                        <label for="ruta" class="text-sm font-semibold text-azul-noche dark:text-crema">Ruta</label>
-                        <select id="ruta" name="ruta" required class="campo">
-                            <option value="">Elige tu ruta</option>
-                            <option value="Luces del Centro">Luces del Centro (Fácil) - $55.000</option>
-                            <option value="Miradores de la Ciudad">Miradores de la Ciudad (Medio) - $75.000</option>
-                            <option value="Luna en las Palmas">Luna en las Palmas (Difícil) - $95.000</option>
-                        </select>
-                    </div>
-                    <div class="flex flex-col space-y-2">
-                        <label for="correo" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">
-                            Correo Electrónico
+                <form action="#inscripcion" method="get" class="w-full space-y-6 p-6 md:p-8 bg-white rounded-2xl border border-azul-noche/10 dark:bg-white/5 dark:border-white/10">
+
+                    <fieldset class="min-w-0 space-y-4 p-4 md:p-6 rounded-xl border border-azul-noche/10 dark:border-white/10">
+                        <legend class="px-2 font-titulos font-bold text-lg text-azul-noche dark:text-crema">Tus datos</legend>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex flex-col space-y-2 md:col-span-2">
+                                <label for="nombre" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" required minlength="3" autocomplete="name" placeholder="Nombre y apellido" class="campo">
+                                <p class="text-xs text-gris-ruta dark:text-crema/75">Mínimo 3 caracteres.</p>
+                            </div>
+                            <div class="flex flex-col space-y-2">
+                                <label for="correo" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Correo electrónico</label>
+                                <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="ejemplo@correo.com" class="campo">
+                                <p class="text-xs text-gris-ruta dark:text-crema/75">Te enviaremos los detalles de la ruta y el mapa GPX aquí.</p>
+                            </div>
+                            <div class="flex flex-col space-y-2">
+                                <label for="celular" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Número de celular</label>
+                                <input type="tel" id="celular" name="celular" required inputmode="numeric" autocomplete="tel" pattern="3[0-9]{9}" title="10 dígitos, sin espacios y empezando por 3. Ejemplo: 3001234567" placeholder="3001234567" class="campo">
+                                <p class="text-xs text-gris-ruta dark:text-crema/75">10 dígitos, empieza por 3. Lo usamos para coordinar el grupo por WhatsApp.</p>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="min-w-0 space-y-4 p-4 md:p-6 rounded-xl border border-azul-noche/10 dark:border-white/10">
+                        <legend class="px-2 font-titulos font-bold text-lg text-azul-noche dark:text-crema">Tu salida</legend>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="flex flex-col space-y-2 md:col-span-2">
+                                <label for="ruta" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Ruta</label>
+                                <select id="ruta" name="ruta" required class="campo">
+                                    <option value="">Elige tu ruta</option>
+                                    <option value="Luces del Centro">Luces del Centro (Fácil) - $55.000</option>
+                                    <option value="Miradores de la Ciudad">Miradores de la Ciudad (Medio) - $75.000</option>
+                                    <option value="Luna en las Palmas">Luna en las Palmas (Difícil) - $95.000</option>
+                                </select>
+                            </div>
+                            <fieldset class="min-w-0 space-y-2 md:col-span-2">
+                                <legend class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Día de salida</legend>
+                                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                                    <label class="flex items-center gap-2 text-sm text-azul-noche dark:text-crema"><input type="radio" name="dia" value="jueves" required class="h-4 w-4 accent-verde-ruta dark:accent-amarillo-farol focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol"> Jueves</label>
+                                    <label class="flex items-center gap-2 text-sm text-azul-noche dark:text-crema"><input type="radio" name="dia" value="viernes" required class="h-4 w-4 accent-verde-ruta dark:accent-amarillo-farol focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol"> Viernes</label>
+                                    <label class="flex items-center gap-2 text-sm text-azul-noche dark:text-crema"><input type="radio" name="dia" value="sabado" required class="h-4 w-4 accent-verde-ruta dark:accent-amarillo-farol focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol"> Sábado</label>
+                                </div>
+                            </fieldset>
+                            <div class="flex flex-col space-y-2">
+                                <label for="acompanantes" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Número de acompañantes</label>
+                                <input type="number" id="acompanantes" name="acompanantes" required min="0" max="3" step="1" inputmode="numeric" placeholder="0 a 3" class="campo">
+                                <p class="text-xs text-gris-ruta dark:text-crema/75">Entre 0 y 3 acompañantes.</p>
+                            </div>
+                            <div class="flex flex-col space-y-2">
+                                <label for="nivel" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">Nivel de experiencia</label>
+                                <select id="nivel" name="nivel" required class="campo">
+                                    <option value="">Elige tu nivel</option>
+                                    <option value="principiante">Principiante</option>
+                                    <option value="intermedio">Intermedio</option>
+                                    <option value="avanzado">Avanzado</option>
+                                </select>
+                            </div>
+                            <fieldset class="min-w-0 space-y-2 md:col-span-2">
+                                <legend class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">¿Tienes bicicleta propia?</legend>
+                                <div class="flex flex-wrap gap-x-6 gap-y-2">
+                                    <label class="flex items-center gap-2 text-sm text-azul-noche dark:text-crema"><input type="radio" name="bicicleta" value="si" required class="h-4 w-4 accent-verde-ruta dark:accent-amarillo-farol focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol"> Sí</label>
+                                    <label class="flex items-center gap-2 text-sm text-azul-noche dark:text-crema"><input type="radio" name="bicicleta" value="no" required class="h-4 w-4 accent-verde-ruta dark:accent-amarillo-farol focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol"> No</label>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="min-w-0 space-y-4 p-4 md:p-6 rounded-xl border border-azul-noche/10 dark:border-white/10">
+                        <legend class="px-2 font-titulos font-bold text-lg text-azul-noche dark:text-crema">Condiciones</legend>
+                        <label class="flex items-start gap-3 text-sm text-azul-noche dark:text-crema">
+                            <input type="checkbox" id="condiciones" name="condiciones" required class="mt-0.5 h-4 w-4 accent-verde-ruta dark:accent-amarillo-farol focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-verde-ruta dark:focus-visible:outline-amarillo-farol">
+                            <span>Acepto las condiciones de la rodada nocturna.</span>
                         </label>
-                        <input type="email" id="correo" name="correo" required autocomplete="email" placeholder="ejemplo@correo.com" 
-                               class="campo">
-                        <p class="text-xs text-gris-ruta dark:text-crema/75">Te enviaremos los detalles de la ruta y el mapa GPX aquí.</p>
-                    </div>
-                    <div class="flex flex-col space-y-2">
-                        <label for="celular" class="text-sm font-semibold tracking-wide text-azul-noche dark:text-crema">
-                            Número de Celular
-                        </label>
-                        <input type="tel" id="celular" name="celular" required autocomplete="tel" placeholder="300 123 4567" 
-                               class="campo">
-                        <p class="text-xs text-gris-ruta dark:text-crema/75">Esencial para coordinar el grupo por WhatsApp en caso de retraso.</p>
-                    </div>
-                    <button type="submit" class="btn-primario block w-full py-3 px-6 mt-2 text-center text-sm">Finalizar Registro</button>
+                    </fieldset>
+
+                    <button type="submit" class="btn-primario block w-full mt-2 py-3 px-6 text-center text-sm">Finalizar Registro</button>
                 </form>
             </div>
         </section>
@@ -253,8 +364,9 @@
             <div class="flex flex-col md:w-1/3 space-y-2 md:text-right">
                 <div class="font-semibold text-xs uppercase tracking-widest text-crema">Contacto</div>
              
-                <p class="text-xs text-crema/75">contacto@ruedalibre.com</p>
-                <p class="text-xs text-crema/75">+57 3223062991</p>
+                <p class="text-xs text-crema/75">Correo: contacto@ruedalibre.com</p>
+                <p class="text-xs text-crema/75">WhatsApp: +57 322 306 2991</p>
+                <p class="text-xs text-crema/75">Calle 10 #43E-15, El Poblado, Medellín</p>
                 <p class="text-xs text-crema/75">© 2026 Rueda Libre Nocturna. Todos los derechos reservados.</p>
             </div>
 

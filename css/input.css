@@ -11,8 +11,8 @@
   --color-amarillo-farol: #FFD166;
 
   /* Tipografías de marca */
-  --font-titulos: "Montserrat", sans-serif;
-  --font-texto: "Open Sans", sans-serif;
+  --font-titulos: "Montserrat", Arial, sans-serif;
+  --font-texto: "Open Sans", Arial, sans-serif;
 }
 
 /* Componentes reutilizables (máximo tres clases propias) */

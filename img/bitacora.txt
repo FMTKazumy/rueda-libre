@@ -353,3 +353,52 @@ Recomiendo Tailwind para la próxima versión de todo el sitio. Rueda Libre tien
 • Amarillo Farol sobre Azul Noche: 11.08:1, cumple.
 • Naranja sobre Azul Noche: 7.2:1, cumple.
 • Verde Ruta sobre Azul Noche: 3.01:1, no cumple. Lo corregí usando Amarillo Farol para textos y enlaces en oscuro, y dejando el verde solo como fondo con texto crema (4.93:1).
+
+
+Fecha: 9 de noviembre de 2026
+Reto: Rueda Libre, entrega y demo (MiniReto 12)
+
+1. Lista de verificación final
+
+Revisión previa con scripts (landing en nocturna/index.html y sitio v2.0), a 360, 768 y 1280 px, en modo claro y oscuro:
+- Enlaces e imágenes rotos (404) en index, tarifas, reservas y landing: 0.
+- Estilos en línea (style="") en las cuatro páginas: 0.
+- Scroll horizontal en la landing a 360, 768 y 1280 px: ninguno.
+- Contraste del texto de la landing (mínimo 4.5:1 y 3:1 en texto grande), modo claro y oscuro: 0 fallos.
+- Estructura: un solo h1 por página, sin saltos de nivel de encabezado, todas las imágenes con alt, todos los campos con label.
+- output.css de la landing minificado: de 41.6 KB a 33.6 KB, y la landing se ve igual antes y después.
+- Enlace entre productos: el sitio enlaza a la landing (menú "Rueda Nocturna") y la landing enlaza al sitio.
+
+Pendiente de revisar a mano (no lo pude medir con script):
+- Navegación con teclado (Tab) y foco visible en ambos productos: ___
+- Sitio v2.0 (Bootstrap) a 360, 768 y 1280 px en DevTools: ___
+- Cero errores 404 y consola limpia en la versión publicada en GitHub Pages: ___
+
+2. Validador del W3C (https://validator.w3.org)
+
+- Landing (nocturna/index.html): ___ errores, ___ advertencias
+- Reservas (paginas/reservas.html): ___ errores, ___ advertencias
+- Errores que reportó y cómo los corregí: ___
+
+3. Publicación en GitHub Pages
+
+- URL del sitio: https://fmtkazumy.github.io/rueda-libre/
+- URL de la landing: https://fmtkazumy.github.io/rueda-libre/nocturna/
+- Verifiqué que carguen y que los enlaces entre ambos funcionen: ___
+
+4. Guion de la demo (3 minutos)
+
+- 0:00 a 0:30, contexto del cliente: Rueda Libre alquila bicicletas en Medellín y lanza las rodadas nocturnas; necesitaba el sitio v2.0 y una landing de campaña con identidad propia.
+- 0:30 a 2:15, recorrido en vivo: sitio (inicio, tarifas) -> menú "Rueda Nocturna" -> landing (rutas, planes con Pareja destacado) -> formulario de inscripción -> vista en celular (DevTools a 360 px) -> modo oscuro.
+- 2:15 a 3:00, dos decisiones técnicas:
+  1. Bootstrap para tarifas y reservas (tablas, grilla y formularios estándar, rapidez) y Tailwind para la landing, donde la marca vive en @theme y el modo oscuro con dark:. Recomendación: Tailwind para todo el sitio en la próxima versión.
+  2. Contraste en modo oscuro: Verde Ruta sobre Azul Noche daba 3.01:1 y no cumple 4.5:1, así que en oscuro uso Amarillo Farol para textos y enlaces y dejo el verde solo como fondo con texto crema (4.93:1).
+
+Ensayo con cronómetro frente a un compañero:
+- Compañero: ___
+- Tiempo real: ___ min ___ s
+- Retroalimentación recibida: ___
+- Qué ajusté después: ___
+
+Tiempo real invertido en este reto: ___ minutos
+Lo que quedó pendiente: ___
